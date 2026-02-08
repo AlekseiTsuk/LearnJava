@@ -16,6 +16,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.42</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>5.3.14</version>
@@ -25,14 +31,12 @@
             <artifactId>spring-context</artifactId>
             <version>5.3.14</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>5.3.14</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.scalatestplus</groupId>
             <artifactId>junit-4-12_2.13</artifactId>
