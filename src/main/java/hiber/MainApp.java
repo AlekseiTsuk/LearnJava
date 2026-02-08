@@ -4,11 +4,13 @@ import hiber.config.AppConfig;
 import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Slf4j
 public class MainApp {
     public static void main(String[] args) throws SQLException {
         AnnotationConfigApplicationContext context =
@@ -27,13 +29,14 @@ public class MainApp {
 
         List<User> users = userService.listUsers();
         for (User user : users) {
-            System.out.println("Id = " + user.getId());
-            System.out.println("First Name = " + user.getFirstName());
-            System.out.println("Last Name = " + user.getLastName());
-            System.out.println("Email = " + user.getEmail());
-            System.out.println("Car = " + user.getCar().toString());
-            System.out.println();
+            log.info("Id = {}", user.getId());
+            log.info("First Name = {}", user.getFirstName());
+            log.info("Last Name = {}", user.getLastName());
+            log.info("Email = {}", user.getEmail());
+            log.info("Car = {}", user.getCar());
+            log.info("");
         }
+
 
         System.out.println(userService.getUserByCar("Mazda", 3));
         context.close();
