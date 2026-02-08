@@ -5,7 +5,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-class HelloWorld {
+class Cat {
+    private String name;
 
-    private String message;
 }
